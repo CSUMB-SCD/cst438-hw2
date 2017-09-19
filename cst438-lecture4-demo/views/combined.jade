@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  style(type='text/css').
+           div {
+                background: url('!{imageURI}');
+                background-size: cover;
+                background-repeat: no-repeat; 
+                height: 300px;
+            }
+  
+  h1 Tweets
+  ul
+      each tweet in tweets
+          li= tweet.text
+          
+    div #{imageURI}
