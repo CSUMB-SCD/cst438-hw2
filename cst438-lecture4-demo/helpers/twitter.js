@@ -24,7 +24,7 @@ function getAccessToken(handleAccessTokenResponse) {
     }; 
     
     var postData = 'grant_type=client_credentials'; 
-    var completeResponse = ''; 
+    var completeResponse = '';
     
     // Set up the request
     var postReq = https.request(options, function(res) {
