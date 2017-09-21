@@ -17,7 +17,7 @@ function getAccessToken(handleAccessTokenResponse) {
     const options = {
         hostname: "api.twitter.com", 
         port: 443, 
-        path: 'https://api.twitter.com/oauth2/token',
+        path: '/oauth2/token',
         method: 'POST', 
         headers: {
             'Authorization': 'Basic ' + base64encoded, 
