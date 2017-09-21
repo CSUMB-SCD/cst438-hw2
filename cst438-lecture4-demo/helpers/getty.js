@@ -3,8 +3,8 @@ var router = express.Router();
 var https = require('https'); 
 
 
-console.log("In getty!!!!!!!!!!!!"); 
-console.log("api key: " + process.env.GETTY_API_KEY); 
+//console.log("In getty!!!!!!!!!!!!"); 
+//console.log("api key: " + process.env.GETTY_API_KEY); 
 
 const options = {
     hostname: "api.gettyimages.com", 
@@ -26,7 +26,7 @@ function makeApiRequest(sendBackResponseToBrowser) {
     https.get(options, function(response){
         response.setEncoding('utf8');
         response.on('data', function(chunk) {
-            console.log("received data: "); 
+            //console.log("received data: "); 
             apiResponse += chunk; 
         }); 
         
@@ -36,10 +36,11 @@ function makeApiRequest(sendBackResponseToBrowser) {
             /*execute callback*/
             var responseJSON = JSON.parse(apiResponse); 
             var images = responseJSON.images; 
-            console.log(responseJSON); 
-            console.log("num images: " + images.length); 
-            console.log("url of first image: " + images[0].display_sizes[0].uri); 
+            //console.log(responseJSON); 
+            //console.log("num images: " + images.length); 
+            //console.log("url of first image: " + images[0].display_sizes[0].uri); 
             var imageURI = images[3].display_sizes[0].uri; 
+            
             
             sendBackResponseToBrowser(null, imageURI); 
             

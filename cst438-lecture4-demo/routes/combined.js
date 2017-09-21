@@ -14,9 +14,9 @@ router.get('/', function(req, res, next){
         var tweets = results[0];
         var imageURI = results[1];
         
-        console.log("image URI " + imageURI);
-        console.log("num tweets: " + tweets.length)
-        res.render('combined', {tweets: tweets, imageURI: imageURI});
+        //console.log("image URI " + imageURI);
+        //console.log("num tweets: " + tweets.length);
+        res.render('combined', {tweetsList: tweets, imageURI: imageURI});
     });
 });
 

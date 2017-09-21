@@ -1,17 +1,16 @@
-extends layout
-
-block content
-  style(type='text/css').
-           div {
+doctype html
+html
+  head
+    style(type='text/css').
+           body {
                 background: url('!{imageURI}');
                 background-size: cover;
                 background-repeat: no-repeat; 
                 height: 300px;
             }
-  
+  body #{imageURI}
+
+block content
   h1 Tweets
-  ul
-      each tweet in tweets
-          li= tweet.text
-          
-    div #{imageURI}
+    div Here lies error codes 403, 401, and 200.
+      li=tweets.text

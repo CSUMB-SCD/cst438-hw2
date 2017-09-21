@@ -11,11 +11,13 @@ var keys = {
 var combined = keys.client + ":" + keys.secret; 
 var base64encoded = btoa(combined); 
 
+console.log(base64encoded);
+
 function getAccessToken(handleAccessTokenResponse) {
     const options = {
         hostname: "api.twitter.com", 
         port: 443, 
-        path: '/oauth2/token',
+        path: 'https://api.twitter.com/oauth2/token',
         method: 'POST', 
         headers: {
             'Authorization': 'Basic ' + base64encoded, 
@@ -30,7 +32,7 @@ function getAccessToken(handleAccessTokenResponse) {
     var postReq = https.request(options, function(res) {
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
-          //console.log('Response: ' + chunk);
+          console.log('Response: ' + chunk);
           completeResponse += chunk; 
       });
       
@@ -107,7 +109,6 @@ router.get('/', function(req, res, next) {
     }); 
   }); 
 });
-
 module.exports = router;*/
 
 function doAllTwitterRequests(callback){
