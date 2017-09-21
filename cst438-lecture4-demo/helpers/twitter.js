@@ -34,7 +34,7 @@ function getAccessToken(handleAccessTokenResponse) {
       res.on('data', function (chunk) {
           console.log('Response: ' + chunk);
           completeResponse += chunk; 
-      });
+      }); 
       
       res.on('end', function() {
             console.log("########################################"); 
